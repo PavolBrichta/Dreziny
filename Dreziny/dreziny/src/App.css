@@ -40,3 +40,140 @@
 .read-the-docs {
   color: #888;
 }
+
+/* layout + fixed left menu */
+.app-layout {
+  /* keep existing layout behavior as fallback */
+  display: block;
+}
+
+/* ensure menu is fixed on desktop and becomes a drawer on mobile */
+/* place menu-toggle hidden by default (desktop) */
+.menu-toggle {
+  display: none;
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 70;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: rgba(0,0,0,0.6);
+  color: inherit;
+  border: 1px solid transparent;
+  font-size: 1.1rem;
+  padding: 0;       /* remove default padding so centering is exact */
+  line-height: 1;   /* ensure vertical centering baseline */
+}
+
+/* desktop: fixed left menu and push main content */
+@media (min-width: 641px) {
+  .app-layout {
+    display: block; /* keep layout simple */
+  }
+  .side-menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 220px;
+    transform: translateX(0);
+    transition: none;
+    z-index: 50;
+  }
+  .main {
+    margin-left: 240px; /* leave space for fixed menu */
+  }
+
+  .side-menu .side-menu-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: stretch;
+  }
+
+  .side-menu .side-menu-inner button {
+    width: 100%;
+    text-align: left;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+}
+
+/* mobile: show hamburger and make side-menu a slide-in drawer */
+@media (max-width: 640px) {
+  .menu-toggle {
+    display: flex;               /* make it a flex container when visible */
+    align-items: center;         /* center vertically */
+    justify-content: center;     /* center horizontally */
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.04);
+  }
+
+  .side-menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 80%;
+    max-width: 320px;
+    transform: translateX(-110%);
+    transition: transform 220ms ease;
+    z-index: 60;
+  }
+  .side-menu.open {
+    transform: translateX(0);
+  }
+
+  .main {
+    margin-left: 0;
+    padding-top: 64px; /* space for toggle */
+  }
+}
+
+/* make active/hover states more visible */
+.side-menu button {
+  text-align: left;
+  padding: 0.6em 0.8em;
+  border: 1px solid transparent;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  border-radius: 6px;
+}
+.side-menu button:hover {
+  border-color: #646cff33;
+}
+.side-menu button.active {
+  background: linear-gradient(90deg, #646cff22, #61dafb11);
+  border-color: #646cff88;
+}
+
+/* contact page small tweaks */
+.contact-page {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.contact-form {
+  display: grid;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+.contact-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.contact-form input,
+.contact-form textarea {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #333;
+  background: #111;
+  color: inherit;
+}
+.contact-form button {
+  align-self: start;
+}
