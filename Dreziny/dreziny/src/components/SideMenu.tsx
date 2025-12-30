@@ -46,6 +46,13 @@ export default function SideMenu() {
 						Home
 					</NavLink>
 					<NavLink
+						to="/gallery"
+						className={linkClass}
+						onClick={() => setOpen(false)}
+					>
+						Gallery
+					</NavLink>
+					<NavLink
 						to="/contact"
 						className={linkClass}
 						onClick={() => setOpen(false)}
