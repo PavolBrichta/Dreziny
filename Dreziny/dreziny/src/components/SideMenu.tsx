@@ -94,14 +94,14 @@ export default function SideMenu() {
 						onClick={() => setLanguage('sk')}
 						aria-label="Slovak"
 					>
-						🇸🇰
+						SK
 					</button>
 					<button
 						className={`lang-btn ${language === 'en' ? 'active' : ''}`}
 						onClick={() => setLanguage('en')}
 						aria-label="English"
 					>
-						🇬🇧
+						EN
 					</button>
 				</div>
 			</nav>
