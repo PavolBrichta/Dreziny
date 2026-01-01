@@ -55,7 +55,7 @@ export default function SideMenu() {
 			>
 				<div className="side-menu-inner">
 					<NavLink
-						to="/"
+						to="/Dreziny/"
 						end
 						className={linkClass}
 						onClick={() => setOpen(false)}
@@ -68,7 +68,7 @@ export default function SideMenu() {
 					</NavLink>
 
 					<NavLink
-						to="/gallery"
+						to="/Dreziny/gallery"
 						className={linkClass}
 						onClick={() => setOpen(false)}
 					>
@@ -76,7 +76,7 @@ export default function SideMenu() {
 					</NavLink>
 
 					<NavLink
-						to="/contact"
+						to="/Dreziny/contact"
 						className={linkClass}
 						onClick={() => setOpen(false)}
 					>

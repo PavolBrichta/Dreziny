@@ -14,9 +14,9 @@ function App() {
 
       <main className="main">
         <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/Dreziny/" element={<Dashboard />} />
+          <Route path="/Dreziny/contact" element={<Contact />} />
+          <Route path="/Dreziny/gallery" element={<Gallery />} />
         </Routes>
       </main>
     </div>
